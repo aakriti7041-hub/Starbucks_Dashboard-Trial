@@ -581,7 +581,7 @@ with tab_2a:
     fig = px.line(weekly, x='week_start', y='ads', color='pilot',
                   labels={'week_start':'Week','ads':'ADS (₹)'},
                   color_discrete_sequence=['#00704A','#1D9E75','#BA7517','#7F77DD','#D85A30'])
-    fig.add_vline(x=date(2026,3,1), line_dash='dash', line_color='gray',
+    fig.add_vline(x='2026-03-01', line_dash='dash', line_color='gray',
                   annotation_text='Pilot launch', annotation_position='top right')
     fig.update_layout(height=400, plot_bgcolor='white', paper_bgcolor='white',
                       hovermode='x unified', margin=dict(l=20,r=20,t=30,b=20))
@@ -779,7 +779,7 @@ with tab_3b:
     fig = px.line(wk_loyalty, x='week_start', y='new_reg_per_store', color='store_type',
                   color_discrete_sequence=['#00704A','#B4B2A9'],
                   labels={'week_start':'Week','new_reg_per_store':'New regs / store'})
-    fig.add_vline(x=date(2026,3,1), line_dash='dash', line_color='gray',
+   fig.add_vline(x='2026-03-01', line_dash='dash', line_color='gray',
                   annotation_text='Pilot launch')
     fig.update_layout(height=350, plot_bgcolor='white', paper_bgcolor='white',
                       margin=dict(l=20,r=20,t=30,b=20))
