@@ -581,8 +581,12 @@ with tab_2a:
     fig = px.line(weekly, x='week_start', y='ads', color='pilot',
                   labels={'week_start':'Week','ads':'ADS (₹)'},
                   color_discrete_sequence=['#00704A','#1D9E75','#BA7517','#7F77DD','#D85A30'])
-    fig.add_vline(x='2026-03-01', line_dash='dash', line_color='gray',
-                  annotation_text='Pilot launch', annotation_position='top right')
+    fig.add_shape(type='line', x0='2026-03-01', x1='2026-03-01',
+                  y0=0, y1=1, yref='paper',
+                  line=dict(color='gray', width=1.5, dash='dash'))
+    fig.add_annotation(x='2026-03-01', y=1.02, yref='paper',
+                       text='Pilot launch', showarrow=False,
+                       font=dict(size=11, color='gray'))
     fig.update_layout(height=400, plot_bgcolor='white', paper_bgcolor='white',
                       hovermode='x unified', margin=dict(l=20,r=20,t=30,b=20))
     fig.update_yaxes(gridcolor='#eee', tickformat=',.0f')
@@ -779,8 +783,12 @@ with tab_3b:
     fig = px.line(wk_loyalty, x='week_start', y='new_reg_per_store', color='store_type',
                   color_discrete_sequence=['#00704A','#B4B2A9'],
                   labels={'week_start':'Week','new_reg_per_store':'New regs / store'})
-    fig.add_vline(x='2026-03-01', line_dash='dash', line_color='gray',
-                  annotation_text='Pilot launch')
+    fig.add_shape(type='line', x0='2026-03-01', x1='2026-03-01',
+                  y0=0, y1=1, yref='paper',
+                  line=dict(color='gray', width=1.5, dash='dash'))
+    fig.add_annotation(x='2026-03-01', y=1.02, yref='paper',
+                       text='Pilot launch', showarrow=False,
+                       font=dict(size=11, color='gray'))
     fig.update_layout(height=350, plot_bgcolor='white', paper_bgcolor='white',
                       margin=dict(l=20,r=20,t=30,b=20))
     st.plotly_chart(fig, use_container_width=True)
